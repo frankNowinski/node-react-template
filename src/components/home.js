@@ -2,7 +2,11 @@ import React from 'react';
 
 const home = () => ({
   render() {
-    return <div>This is home</div>
+    return (
+      <div className="container">
+        <p>Home Page</p>
+      </div>
+    )
   }
 });
 
