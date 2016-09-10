@@ -4,7 +4,7 @@ const home = () => ({
   render() {
     return (
       <div className="container">
-        <p>Home Page</p>
+        <p className="lead">Home Page</p>
       </div>
     )
   }
