@@ -22,7 +22,7 @@ class Register extends Component {
     event.preventDefault();
 
     this.props.createUser(this.state).then(res => {
-      console.log(`Response: ${res}`);
+      console.log(`: ${res}`);
     }).catch(err => {
       console.log(`Error: ${err}`);
     });

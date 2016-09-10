@@ -6,6 +6,7 @@ export default function(state = INITIAL_STATE, action) {
 
   switch(action.type) {
   case CREATE_USER:
+    console.log(action.payload);
     console.log('Response:' + action.payload);
   default:
     return state;

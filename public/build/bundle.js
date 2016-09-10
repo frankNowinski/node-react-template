@@ -29007,6 +29007,7 @@
 	
 	  switch (action.type) {
 	    case _index.CREATE_USER:
+	      console.log(action.payload);
 	      console.log('Response:' + action.payload);
 	    default:
 	      return state;
@@ -29040,7 +29041,7 @@
 	var CREATE_USER = exports.CREATE_USER = 'CREATE_USER';
 	
 	function createUser(user) {
-	  var request = _axios2.default.get(API_URL + '/users');
+	  var request = _axios2.default.post(API_URL + '/users', user);
 	
 	  return {
 	    type: CREATE_USER,
@@ -31362,7 +31363,7 @@
 	      event.preventDefault();
 	
 	      this.props.createUser(this.state).then(function (res) {
-	        console.log('Response: ' + res);
+	        console.log(': ' + res);
 	      }).catch(function (err) {
 	        console.log('Error: ' + err);
 	      });
