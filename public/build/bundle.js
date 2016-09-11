@@ -31362,10 +31362,10 @@
 	    value: function onFormSubmit(event) {
 	      event.preventDefault();
 	
-	      this.props.createUser(this.state).then(function (res) {
-	        console.log(': ' + res);
-	      }).catch(function (err) {
-	        console.log('Error: ' + err);
+	      this.props.createUser(this.state).then(function () {
+	        console.log('Lets change routes');
+	        _reactRouter.browserHistory.push('/');
+	        // this.context.router.push('/');
 	      });
 	    }
 	  }, {
@@ -31406,11 +31406,6 @@
 	
 	  return Register;
 	}(_react.Component);
-	//
-	// function mapStateToProps(state) {
-	//   console.log(state);
-	//   return {user: state.user}
-	// }
 	
 	exports.default = (0, _reactRedux.connect)(null, { createUser: _index.createUser })(Register);
 

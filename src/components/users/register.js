@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { createUser } from '../../actions/index';
-import { Link } from 'react-router';
+import { Link, browserHistory } from 'react-router';
 
 class Register extends Component {
   constructor(props) {
@@ -21,11 +21,11 @@ class Register extends Component {
   onFormSubmit(event) {
     event.preventDefault();
 
-    this.props.createUser(this.state).then(res => {
-      console.log(`: ${res}`);
-    }).catch(err => {
-      console.log(`Error: ${err}`);
-    });
+    this.props.createUser(this.state)
+      .then(() => {
+        console.log('Lets change routes');
+        browserHistory.push('/');
+      });
   }
 
   render() {
@@ -47,10 +47,6 @@ class Register extends Component {
     )
   }
 }
-//
-// function mapStateToProps(state) {
-//   console.log(state);
-//   return {user: state.user}
-// }
+
 
 export default connect(null, {createUser})(Register);

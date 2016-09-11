@@ -16,8 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 mongoose.connect(config.getDbConnectionString());
 
 // Routes
-const users = require('./routes/users');
-users(app);
+require('./controllers/users')(app);
 
 // Default route
 app.get('*', function(req, res){

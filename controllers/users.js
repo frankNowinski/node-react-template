@@ -10,7 +10,7 @@ module.exports = function(app) {
 
     User.create(newUser, function(err, results) {
       if (err) throw err;
-      
+
       res.send(results)
     })
   });

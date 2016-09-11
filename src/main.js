@@ -11,8 +11,7 @@ const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 render(
   <Provider store={createStoreWithMiddleware(reducers)}>
-    <Router history={browserHistory} routes={routes}>
-    </Router>
+    <Router history={browserHistory} routes={routes} />
   </Provider>,
   document.getElementById('app')
 )
